@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 
+# clsdiff.py
+#
+# dump 2 Objective-C binaries and list a differences of all classes
+# (2 ways diff)
+
 import sys
 import subprocess
 

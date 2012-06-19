@@ -2,9 +2,9 @@
 
 # dumper.sh
 # 
-# class-dumper (using class-dump on i386 binaries)
+# dump frameworks conveniently
 
-_class="class-dump --arch i386" # you can easily add -S, -s, -a and -A flags ;) 
+_class="class-dump --arch i386"
 
 usage()
 {
