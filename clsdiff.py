@@ -2,8 +2,7 @@
 
 # clsdiff.py
 #
-# dump 2 Objective-C binaries and list a differences of all classes
-# (2 ways diff)
+# dump 2 Objective-C binaries and print a 2-ways diff of all classes
 
 import sys
 import subprocess
