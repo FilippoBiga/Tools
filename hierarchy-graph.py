@@ -68,8 +68,6 @@ if __name__ == '__main__':
         print "Invalid class-dump[-z] path"
         exit(-2)
 
-    exit(0)
-
 
     headerLines = None
     if inputFile.endswith('.h'):
