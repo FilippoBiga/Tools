@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import sys
 import plistlib
 import argparse
 import subprocess
@@ -51,7 +52,7 @@ if __name__ == '__main__':
     inputFile = arguments['input']
     outputFile = arguments['output']
     format = "svg"
-    classdumpPath = "class-dump-z"
+    classdumpPath = "class-dump"
 
     if arguments['format'] != None:
         format = arguments['format']
@@ -64,8 +65,10 @@ if __name__ == '__main__':
 
     try:
         subprocess.check_output([ classdumpPath ])
+    except:
         print "Invalid class-dump[-z] path"
-    exit(-2)
+        exit(-2)
+
 
     headerLines = None
     if inputFile.endswith('.h'):
