@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import sys
 import plistlib
 import argparse
 import subprocess
@@ -64,10 +63,12 @@ if __name__ == '__main__':
         classdumpPath = arguments['classdump']
 
     try:
-        subprocess.check_output([ classdumpPath ])
+        subprocess.check_output([ classdumpPath ], stderr=subprocess.STDOUT)
     except:
         print "Invalid class-dump[-z] path"
         exit(-2)
+
+    exit(0)
 
 
     headerLines = None
@@ -89,6 +90,8 @@ if __name__ == '__main__':
         # find @interface declarations but exclude categories
         if '@interface' in line and not '(' in line:
             classes = get_class_pair(line)
+            if len(classes) != 2:
+                continue
             classPairs[classes[0]] = classes[1]
 
     for k in classPairs.keys():
